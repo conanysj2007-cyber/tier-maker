@@ -46,10 +46,6 @@
             flex-wrap: wrap;
             max-width: 1200px;
             margin: 0 auto;
-
-            /* TODO 1: 보드와 사이드 패널을 가로로 배치하고, 공간이 좁아지면 자연스럽게 줄바꿈되도록 설정하세요. (간격: 20px) */
-            /* 💡 힌트: display, flex-wrap, gap 속성을 사용하세요. */
-
         }
 
         /* 2. 티어 리스트 보드 (좌측 넓은 영역) */
@@ -61,15 +57,11 @@
             display: flex;
             flex-grow: 1;
             flex-direction: column;
-            /* TODO 2: 남은 가로 공간을 꽉 채우도록 설정하고, 내부 행(Row)들이 세로로 쌓이도록 방향을 지정하세요. */
-            /* 💡 힌트: flex-grow와 flex-direction 속성이 필요합니다. (우선 display: flex; 를 선언하는 것도 잊지 마세요!) */
-
         }
 
         /* 3. 사이드 패널 (우측 미리보기 및 대기소 영역) */
         .side-panel {
             width: 320px;
-            /* 고정 너비 */
             display: flex;
             flex-direction: column;
         }
@@ -81,10 +73,6 @@
             border-bottom: 2px solid #333;
             min-height: 120px;
             display: flex;
-
-            /* TODO 3: 좌측 등급 라벨과 우측 아이템 드롭 영역을 가로로 배치하세요. */
-            /* 💡 힌트: 요소를 가로로 나열하는 가장 기본적인 Flexbox 속성 1가지만 적용하면 됩니다. */
-
         }
 
         .tier-row:last-child {
@@ -101,28 +89,13 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            /* 창이 줄어도 라벨 크기는 고정 */
         }
 
-        .rank-s {
-            background-color: #ff7f7f;
-        }
-
-        .rank-a {
-            background-color: #ffbf7f;
-        }
-
-        .rank-b {
-            background-color: #ffff7f;
-        }
-
-        .rank-c {
-            background-color: #7fff7f;
-        }
-
-        .rank-d {
-            background-color: #7fbfff;
-        }
+        .rank-s { background-color: #ff7f7f; }
+        .rank-a { background-color: #ffbf7f; }
+        .rank-b { background-color: #ffff7f; }
+        .rank-c { background-color: #7fff7f; }
+        .rank-d { background-color: #7fbfff; }
 
         /* =========================================
            [실습 3] 드롭 영역 및 아이템 정렬
@@ -138,13 +111,6 @@
 
         .tier-items {
             background-color: #2b2b2b;
-            display: flex;
-            flex-wrap: wrap;
-            flex-grow: 1;
-
-            /* TODO 4: 아이템들을 가로로 나열하되 넘치면 줄바꿈되도록 하고, 라벨을 제외한 남은 공간을 꽉 채우세요. */
-            /* 💡 힌트: display, flex-wrap, flex-grow 세 가지 속성을 모두 조합해야 합니다. */
-
         }
 
         /* 아이템 대기소 */
@@ -152,8 +118,6 @@
             background-color: #e5e7eb;
             border-radius: 12px;
             min-height: 200px;
-            display: flex;
-            flex-wrap: wrap;
         }
 
         /* 미리보기 창 디자인 */
@@ -231,13 +195,8 @@
                 width: 100%;
             }
 
-            /* 모바일에서는 사이드 패널이 전체 너비 차지 */
             .tier-row {
-                display: flex;
                 flex-direction: column;
-                /* TODO 5: 모바일 화면에서는 라벨과 드롭 영역이 세로로 배치되도록 방향을 바꾸세요. */
-                /* 💡 힌트: flex-direction 속성을 활용하여 정렬 축을 세로 방향으로 변경하세요. */
-
             }
 
             .tier-label {
@@ -287,62 +246,69 @@
 
             <h2 style="font-size: 1.2rem; margin-bottom: 10px; color: #333;">📌 아이템 대기열</h2>
             <div class="item-pool" id="pool" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <!-- 조원들이 전달해준 아이템 코드를 여기에 붙여넣습니다. -->
-                <!-- 팀원 아이템 시작 (주의: id 값은 팀원마다 고유하게 변경하세요) -->
-                <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)"
-                    id="twosome">
-                    <img src="./images/투썸.png" alt="투썸플레이스">
+                
+                <!-- 팀원 아이템 -->
+                <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="twosome">
+                    <img src="./images/투썸.png" alt="투썸플레이스" draggable="false">
                     <div class="item-name">투썸플레이스</div>
                 </div>
 
                 <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="paik">
-                    <img src="./images/백다방.png" alt="빽다방">
+                    <img src="./images/백다방.png" alt="빽다방" draggable="false">
                     <div class="item-name">빽다방</div>
                 </div>
 
                 <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="mega">
-                    <img src="./images/메가.jpg" alt="메가커피">
+                    <img src="./images/메가.jpg" alt="메가커피" draggable="false">
                     <div class="item-name">메가커피</div>
                 </div>
-                <!-- 팀원 아이템 끝 -->
-                             <!-- 팀원 아이템 시작 (주의: id 값은 팀원마다 고유하게 변경하세요) -->
-            <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="item_yourname_1">
-                <img src="./images/starbuks.jpg" alt="starbuks">
-                <div class="item-name">starbuks</div>
-            </div>
-            
-            <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="item_yourname_2">
-                <img src="./images/ediya.jpg" alt="ediya">
-                <div class="item-name">ediya</div>
-            </div>
 
-            <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="item_yourname_2">
-                <img src="./images/compose.png" alt="compose">
-                <div class="item-name">compose</div>
-            </div>
-            <!-- 팀원 아이템 끝 -->
-                         <!-- 팀원 아이템 시작 (주의: id 값은 팀원마다 고유하게 변경하세요) -->
-            <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="item_mammoth">
-                <img src="./images/매머드.png" alt="매머드">
-                <div class="item-name">mammoth coffee</div>
-            </div>
-            
-            <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="item_hollys">
-                <img src="./images/할리스.png" alt="할리스">
-                <div class="item-name">hollys coffee</div>
-            </div>
-            <!-- 팀원 아이템 끝 -->
+                <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="item_yourname_1">
+                    <img src="./images/starbuks.jpg" alt="starbuks" draggable="false">
+                    <div class="item-name">starbuks</div>
+                </div>
+
+                <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="item_yourname_2">
+                    <img src="./images/ediya.jpg" alt="ediya" draggable="false">
+                    <div class="item-name">ediya</div>
+                </div>
+
+                <!-- id 중복 수정 -->
+                <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="item_yourname_3">
+                    <img src="./images/compose.png" alt="compose" draggable="false">
+                    <div class="item-name">compose</div>
+                </div>
+
+                <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="item_mammoth">
+                    <img src="./images/매머드.png" alt="매머드" draggable="false">
+                    <div class="item-name">mammoth coffee</div>
+                </div>
+
+                <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="item_hollys">
+                    <img src="./images/할리스.png" alt="할리스" draggable="false">
+                    <div class="item-name">hollys coffee</div>
+                </div>
+
             </div>
         </aside>
     </div>
 
     <script>
-        function allowDrop(ev) { ev.preventDefault(); }
-        function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+        function allowDrop(ev) { 
+            ev.preventDefault(); 
+        }
+
+        function drag(ev) { 
+            // 대상이 img일 경우를 대비해 가장 가까운 .item 클래스의 id를 가져옴
+            var targetId = ev.target.closest('.item').id;
+            ev.dataTransfer.setData("text", targetId); 
+        }
+
         function drop(ev) {
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
             var draggedElement = document.getElementById(data);
+            
             if (ev.target.classList.contains('tier-items') || ev.target.classList.contains('item-pool')) {
                 ev.target.appendChild(draggedElement);
             } else if (ev.target.closest('.tier-items')) {
