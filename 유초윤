@@ -1,0 +1,16 @@
+            <!-- 팀원 아이템 시작 (주의: id 값은 팀원마다 고유하게 변경하세요) -->
+            <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="item_yourname_1">
+                <img src="./images/starbuks.jpg" alt="starbuks">
+                <div class="item-name">starbuks</div>
+            </div>
+            
+            <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="item_yourname_2">
+                <img src="./images/ediya.jpg" alt="ediya">
+                <div class="item-name">ediya</div>
+            </div>
+
+            <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="item_yourname_2">
+                <img src="./images/compose.png" alt="compose">
+                <div class="item-name">compose</div>
+            </div>
+            <!-- 팀원 아이템 끝 -->
