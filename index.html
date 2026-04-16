@@ -246,19 +246,19 @@
 
             <h2 style="font-size: 1.2rem; margin-bottom: 10px; color: #333;">📌 아이템 대기열</h2>
             <div class="item-pool" id="pool" ondrop="drop(event)" ondragover="allowDrop(event)">
-                            <!-- 팀원 아이템 시작 (주의: id 값은 팀원마다 고유하게 변경하세요) -->
-            <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="더 벤티">
-                <img src="./img/images.jpeg" alt="더 벤티">
-                <div class="item-name">더 벤티</div>
-            </div>
-            
-            <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="탐앤탐스">
-                <img src="./img/img.gif" alt="탐앤탐스">
-                <div class="item-name">탐앤탐스</div>
-            </div>
-            <!-- 팀원 아이템 끝 -->
                 
-                <!-- 팀원 아이템 -->
+                <!-- 팀원 아이템 추가된 부분 -->
+                <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="더_벤티">
+                    <img src="./img/images.jpeg" alt="더 벤티" draggable="false">
+                    <div class="item-name">더 벤티</div>
+                </div>
+                
+                <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="탐앤탐스">
+                    <img src="./img/img.gif" alt="탐앤탐스" draggable="false">
+                    <div class="item-name">탐앤탐스</div>
+                </div>
+
+                <!-- 기존 아이템들 -->
                 <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="twosome">
                     <img src="./images/투썸.png" alt="투썸플레이스" draggable="false">
                     <div class="item-name">투썸플레이스</div>
@@ -284,7 +284,6 @@
                     <div class="item-name">ediya</div>
                 </div>
 
-                <!-- id 중복 수정 -->
                 <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="item_yourname_3">
                     <img src="./images/compose.png" alt="compose" draggable="false">
                     <div class="item-name">compose</div>
